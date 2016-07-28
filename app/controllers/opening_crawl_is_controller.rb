@@ -2,11 +2,11 @@ class OpeningCrawlIsController < ApplicationController
 
   def new
     @film = OpeningCrawlI.get_film_opening
-    @people = OpeningCrawlI.get_people
-    @planets = OpeningCrawlI.get_planets
-    @vehicles = OpeningCrawlI.get_vehicles
-    @starships = OpeningCrawlI.get_starships
-    @species = OpeningCrawlI.get_species
+    @people = Person.get_people
+    @planets = Planet.get_planets
+    @vehicles = Vehicle.get_vehicles
+    @starships = Starship.get_starships
+    @species = Species.get_species
     @intro = OpeningCrawlI.new
   end
 
@@ -38,6 +38,23 @@ class OpeningCrawlIsController < ApplicationController
   end
 
   def destroy 
+  end
+
+  def get_number
+    @params = params
+  end
+
+  def send_text
+    @number = params[:number]
+    @intro = OpeningCrawlI.find(params[:id])
+    @send_message = TwilioApi.new.send_message(@number, @intro.intro_words)
+     if @send_message
+       flash[:success] = "reminder sent"
+       redirect_to opening_crawl_is_path
+     else
+       flash[:error] = "Something went wrong..."
+       render :get_number
+     end
   end
 
 

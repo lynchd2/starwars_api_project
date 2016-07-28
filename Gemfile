@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
+gem 'twilio-ruby'
+
+gem 'figaro'
+
 gem 'faraday'
 
 gem 'better_errors'
 
 gem 'binding_of_caller'
-
-gem 'swgem'
-
-gem 'swapi'
 
 gem 'tatooine'
 

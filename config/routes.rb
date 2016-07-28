@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'static_pages/show'
 
+  post 'opening_crawl_is/send_text/:id' => 'opening_crawl_is#send_text', as: :send_text
+
+  get 'opening_crawl_is/get_number/:id' => 'opening_crawl_is#get_number', as: :get_number
   root 'static_pages#show'
 
   resources :opening_crawl_is
