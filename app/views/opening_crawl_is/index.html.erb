@@ -1,0 +1,10 @@
+<nav class="navbar navbar-default">
+<%= link_to "Browse the other opening introductions", static_pages_show_path, {class: "navbar-text"} %>
+<%= link_to "Create a new introduction!", new_opening_crawl_i_path, {class: "navbar-text"} %>
+</nav>
+<% @intros.each do |intro| %>
+  <div class="text-center">
+    <%= link_to "Opener number", opening_crawl_i_path(intro) %> 
+    <%= intro.intro_words %></br></br></br>
+  </div>
+<% end %>

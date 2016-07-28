@@ -1,0 +1,19 @@
+<% names = ["People", "Planets", "Vehicles", "Starships", "Species"] %>
+<% counter = 0 %>
+<% all = [] %>
+<% all << @people << @planets << @vehicles << @starships  << @species %>
+<% all.each do |array| %>
+  <div class="suggestions-dropdown">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><%=names[counter] %>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <% array.each do |thing| %>
+          <li class="disabled text-center"><%= thing %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% counter += 1 %>
+<% end %>

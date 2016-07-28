@@ -1,0 +1,42 @@
+<%= render "suggestions" %>
+
+
+<h1 class="text-center">Original:</h1>
+<div class="original-intro-words">
+  <%= @film.opening_crawl %>
+</div>
+</br>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+  <li><a href="#">Regular link</a></li>
+  <li class="disabled"><a href="#">Disabled link</a></li>
+  <li><a href="#">Another link</a></li>
+</ul>
+
+<h1 class="text-center">Customize:</h1>
+<div class="container text-center">
+  <%= form_for @intro do |f| %>
+    <%= f.text_area :intro_words, {class: "big-text-area"} %>
+    <%= f.submit :Submit %>
+  <% end %>
+
+  <% a = @intro.intro_words.split(" ").each_with_index do |word, index| %>
+    <%= [word, index] %>
+  <% end %>
+</div>
+</br>
+
+<% a[7..8] = "Rebel spaceships," %>
+<% a[10..13] = "a hidden base," %>
+<% a[22..23] = "Galactive Empire." %>
+<% a[27..28] = "Rebel Spies" %>
+<% a[35..36] = "the Empire's," %>
+<% a[40..41] = "DEATH STAR," %>
+<% a[44..45] = "Space Station" %>
+<% a[51..53] = "an entire planet." %>
+<% a[56..59] = "the Empire's Sinister agents," %>
+<% a[60..61] = "Princess Leia" %>
+<% a[66..66] = "starship" %>
+<% a[75..76] = "her people" %>
+
+
+
