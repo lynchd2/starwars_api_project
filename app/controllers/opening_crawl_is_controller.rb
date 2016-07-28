@@ -11,6 +11,7 @@ class OpeningCrawlIsController < ApplicationController
   end
 
   def show
+    @color = true
     @intro = OpeningCrawlI.find(params[:id])
   end
 

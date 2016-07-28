@@ -1,5 +1,5 @@
+<%= render "navbar" %>
 <%= render "suggestions" %>
-
 
 <h1 class="text-center">Original:</h1>
 <div class="original-intro-words">
@@ -15,12 +15,12 @@
 <h1 class="text-center">Customize:</h1>
 <div class="container text-center">
   <%= form_for @intro do |f| %>
-    <%= f.text_area :intro_words, {class: "big-text-area"} %>
+    <%= f.text_area :intro_words, {class: "big-text-area"} %></br>
     <%= f.submit :Submit %>
   <% end %>
 
   <% a = @intro.intro_words.split(" ").each_with_index do |word, index| %>
-    <%= [word, index] %>
+    <% [word, index] %>
   <% end %>
 </div>
 </br>
