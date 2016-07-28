@@ -1,4 +1,4 @@
-class OpeningCrawlIsController < ApplicationController
+class OpeningCrawlsController < ApplicationController
 
   def new
     @film = OpeningCrawlI.get_film_opening
@@ -7,7 +7,7 @@ class OpeningCrawlIsController < ApplicationController
     @vehicles = Vehicle.get_vehicles
     @starships = Starship.get_starships
     @species = Species.get_species
-    @intro = OpeningCrawlI.new
+    @intro = OpeningCrawl.new
   end
 
   def show

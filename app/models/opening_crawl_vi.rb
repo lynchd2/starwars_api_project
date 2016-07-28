@@ -1,0 +1,2 @@
+class OpeningCrawlVi < OpeningCrawl
+end

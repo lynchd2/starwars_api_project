@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get 'static_pages/show'
 
-  post 'opening_crawl_is/send_text/:id' => 'opening_crawl_is#send_text', as: :send_text
+  post 'opening_crawls/send_text/:id' => 'opening_crawls#send_text', as: :send_text
 
-  get 'opening_crawl_is/get_number/:id' => 'opening_crawl_is#get_number', as: :get_number
+  get 'opening_crawls/get_number/:id' => 'opening_crawls#get_number', as: :get_number
   root 'static_pages#show'
 
-  resources :opening_crawl_is
+  resources :opening_crawls
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,6 @@
 
 <% @intros.each do |intro| %>
   <div class="text-center">
-    <%= link_to "Introduction #{intro.id}", opening_crawl_i_path(intro) %> 
+    <%= link_to "Introduction #{intro.id}", opening_crawl_path(intro) %> 
   </div>
 <% end %>
