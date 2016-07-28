@@ -4,7 +4,7 @@
 </nav>
 <% @intros.each do |intro| %>
   <div class="text-center">
-    <%= link_to "Opener number", opening_crawl_i_path(intro) %> 
+    <%= link_to "Opener #{intro.id}", opening_crawl_i_path(intro) %> 
     <%= intro.intro_words %></br></br></br>
   </div>
 <% end %>
