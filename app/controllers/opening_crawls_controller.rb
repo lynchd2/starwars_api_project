@@ -1,7 +1,7 @@
 class OpeningCrawlsController < ApplicationController
 
   def new
-    @film = OpeningCrawlI.get_film_opening
+    @film = OpeningCrawl.get_film_opening
     @people = Person.get_people
     @planets = Planet.get_planets
     @vehicles = Vehicle.get_vehicles
@@ -28,7 +28,7 @@ class OpeningCrawlsController < ApplicationController
   end
 
   def index
-    @intros = OpeningCrawlI.all
+    @intros = OpeningCrawl.all
   end
 
   def edit
@@ -50,7 +50,7 @@ class OpeningCrawlsController < ApplicationController
     @send_message = TwilioApi.new.send_message(@number, @intro.intro_words)
      if @send_message
        flash[:success] = "reminder sent"
-       redirect_to opening_crawl_is_path
+       redirect_to opening_crawls_path
      else
        flash[:error] = "Something went wrong..."
        render :get_number
