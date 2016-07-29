@@ -12,12 +12,12 @@ class OpeningCrawlsController < ApplicationController
 
   def show
     @color = true
-    @intro = OpeningCrawlI.find(params[:id])
+    @intro = OpeningCrawl.find(params[:id])
   end
 
 
   def create
-    @intro = OpeningCrawlI.create(opening_params)
+    @intro = OpeningCrawl.create(opening_params)
     if @intro.save
       flash[:success] = "Your opening was saved!"
       redirect_to @intro
@@ -62,6 +62,6 @@ class OpeningCrawlsController < ApplicationController
 
 
   def opening_params
-    params.require(:opening_crawl_i).permit(:intro_words)
+    params.require(:opening_crawl).permit(:intro_words)
   end
 end
